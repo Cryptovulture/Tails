@@ -1,0 +1,75 @@
+:root {
+    /* Backgrounds */
+    --bg-primary: #0C0F0A;
+    --bg-secondary: #141A12;
+    --bg-card: #1C1610;
+    --bg-card-hover: #241E16;
+    --bg-card-glass: rgba(28, 22, 16, 0.75);
+    --bg-input: #110E0A;
+    --bg-elevated: #1A1510;
+    --bg-felt: #1A2E1A;
+
+    /* Text */
+    --text-primary: #F5E6C8;
+    --text-secondary: #B89E76;
+    --text-muted: #6B5D4A;
+    --text-white: #FFFDD0;
+
+    /* Gold (primary accent) */
+    --accent-gold: #D4A843;
+    --accent-gold-bright: #F0C85A;
+    --accent-gold-dim: #A68430;
+    --accent-gold-muted: rgba(212, 168, 67, 0.08);
+
+    /* Green (felt / win) */
+    --accent-green: #2D8C3C;
+    --accent-green-bright: #3AAD4A;
+
+    /* Red (lose / danger) */
+    --accent-red: #C1272D;
+    --accent-red-bright: #E63946;
+
+    /* Supporting */
+    --accent-copper: #B87333;
+    --accent-bronze: #8B6914;
+    --accent-ivory: #FFFDD0;
+    --accent-blue: #5B8DB8;
+
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, #D4A843, #F0C85A);
+    --gradient-felt: linear-gradient(135deg, #1A2E1A, #0C0F0A);
+
+    /* Borders */
+    --border-color: #2A2218;
+    --border-subtle: #1E1A14;
+    --border-glow: rgba(212, 168, 67, 0.2);
+    --border-gold: rgba(212, 168, 67, 0.3);
+
+    /* Typography */
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Crimson Pro', Georgia, serif;
+    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+    /* Radii */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 18px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(212, 168, 67, 0.05);
+    --shadow-elevated: 0 8px 32px rgba(0, 0, 0, 0.5);
+    --shadow-glow-gold: 0 0 20px rgba(212, 168, 67, 0.15), 0 0 60px rgba(212, 168, 67, 0.05);
+    --shadow-glow-green: 0 0 20px rgba(45, 140, 60, 0.12);
+    --shadow-glow-red: 0 0 20px rgba(193, 39, 45, 0.12);
+    --shadow-inset-felt: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+
+    /* Transitions */
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Textures */
+    --noise-texture: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+
+    --art-deco-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='%23D4A843' stroke-width='0.5' opacity='0.03'/%3E%3Cpath d='M30 10L50 30L30 50L10 30Z' fill='none' stroke='%23D4A843' stroke-width='0.3' opacity='0.02'/%3E%3C/svg%3E");
+}

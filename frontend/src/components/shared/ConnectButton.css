@@ -1,0 +1,59 @@
+.connect-btn-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wallet-address {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    background: var(--bg-card);
+    padding: 6px 10px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wallet-address::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent-green);
+    flex-shrink: 0;
+    box-shadow: 0 0 4px rgba(45, 140, 60, 0.4);
+}
+
+.btn {
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: all 0.15s var(--ease-out);
+}
+
+.btn-connect {
+    background: var(--gradient-gold);
+    color: #0C0F0A;
+    font-weight: 700;
+    border: 1px solid rgba(212, 168, 67, 0.4);
+}
+
+.btn-connect:hover {
+    box-shadow: var(--shadow-glow-gold);
+    filter: brightness(1.1);
+}
+
+.btn-disconnect {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+}
+
+.btn-disconnect:hover {
+    border-color: rgba(193, 39, 45, 0.3);
+    color: var(--accent-red);
+}

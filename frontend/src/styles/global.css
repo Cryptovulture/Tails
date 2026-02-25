@@ -1,0 +1,223 @@
+@import './variables.css';
+@import './animations.css';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Body: 5-layer casino background ===== */
+body {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+    position: relative;
+
+    /* Layer 1: solid dark base (via background-color above) */
+    /* Layer 2: radial green felt gradient + Layer 3: art deco pattern */
+    background-image:
+        var(--art-deco-pattern),
+        radial-gradient(ellipse at 50% 30%, rgba(26, 46, 26, 0.25) 0%, transparent 60%);
+    background-size: 60px 60px, 100% 100%;
+    background-repeat: repeat, no-repeat;
+}
+
+/* Layer 4: noise grain overlay */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: var(--noise-texture);
+    background-repeat: repeat;
+    background-size: 256px 256px;
+    mix-blend-mode: soft-light;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Layer 5: radial vignette */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(
+        ellipse at 50% 40%,
+        transparent 0%,
+        transparent 40%,
+        rgba(12, 15, 10, 0.4) 70%,
+        rgba(12, 15, 10, 0.7) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+main {
+    flex: 1;
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 32px 20px;
+}
+
+/* ===== Typography base ===== */
+h1, h2, h3 {
+    font-family: var(--font-display);
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+a {
+    color: var(--accent-gold);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    cursor: pointer;
+    font-family: var(--font-sans);
+    border: none;
+    outline: none;
+}
+
+input {
+    font-family: var(--font-mono);
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    transition: border-color 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
+}
+
+input:focus {
+    border-color: var(--accent-gold);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(212, 168, 67, 0.1);
+}
+
+input::placeholder {
+    color: var(--text-muted);
+}
+
+/* ===== Common page elements ===== */
+.page-header {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.page-title-gradient {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    color: var(--accent-gold-bright);
+    animation: neon-flicker 4s ease-in-out infinite;
+    margin-bottom: 4px;
+}
+
+.page-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    font-style: italic;
+}
+
+.error-banner {
+    background: rgba(193, 39, 45, 0.08);
+    border: 1px solid rgba(193, 39, 45, 0.2);
+    color: var(--accent-red-bright);
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.error-dismiss {
+    background: none;
+    color: var(--accent-red-bright);
+    font-size: 1rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    opacity: 0.6;
+    transition: opacity 0.15s;
+}
+
+.error-dismiss:hover {
+    opacity: 1;
+}
+
+.connect-prompt {
+    text-align: center;
+    padding: 32px 24px;
+    color: var(--text-muted);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+}
+
+/* WalletConnect modal overrides */
+.wallet-connect-modal-backdrop {
+    z-index: 10000;
+}
+
+/* Only show OP_WALLET */
+.wallet-list > button:has(img[alt="UNISAT"]) {
+    display: none;
+}
+.wallet-list > a:has(img[alt="UNISAT"]) {
+    display: none;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 168, 67, 0.3);
+}
+
+/* ===== Utility: gold decorative rule ===== */
+.gold-rule {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 168, 67, 0.3), transparent);
+    border: none;
+    margin: 16px 0;
+}

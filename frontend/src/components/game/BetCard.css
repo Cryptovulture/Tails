@@ -1,0 +1,152 @@
+.bet-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    transition: all 0.2s var(--ease-out);
+    animation: card-deal 0.4s var(--ease-out) backwards;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+}
+
+.bet-card.open {
+    animation: card-deal 0.4s var(--ease-out) backwards, status-pulse 4s ease-in-out infinite;
+}
+
+.bet-card:hover {
+    background: var(--bg-card-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-card);
+}
+
+.bet-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.bet-id {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.bet-status {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-open {
+    background: rgba(212, 168, 67, 0.1);
+    color: var(--accent-gold);
+}
+
+.status-open::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent-gold);
+    animation: dot-pulse 2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+.status-settled {
+    background: rgba(45, 140, 60, 0.1);
+    color: var(--accent-green);
+}
+
+.status-cancelled {
+    background: rgba(107, 93, 74, 0.1);
+    color: var(--text-muted);
+}
+
+.bet-amount {
+    font-family: var(--font-mono);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.bet-currency {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.bet-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-accept {
+    flex: 1;
+    padding: 10px;
+    background: var(--gradient-gold);
+    color: #0C0F0A;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: all 0.15s var(--ease-out);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.btn-accept:hover:not(:disabled) {
+    box-shadow: var(--shadow-glow-gold);
+    filter: brightness(1.1);
+}
+
+.btn-accept:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.btn-accept:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-cancel {
+    flex: 1;
+    padding: 10px;
+    background: transparent;
+    color: var(--accent-red);
+    border: 1px solid rgba(193, 39, 45, 0.25);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.15s var(--ease-out);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.btn-cancel:hover:not(:disabled) {
+    background: rgba(193, 39, 45, 0.08);
+    border-color: rgba(193, 39, 45, 0.4);
+}
+
+.btn-cancel:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.bet-connect-hint {
+    flex: 1;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    padding: 8px;
+}

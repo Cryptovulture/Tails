@@ -1,0 +1,134 @@
+.stake-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+}
+
+.panel-title {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.balance-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.balance-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.balance-value {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.balance-value.staked {
+    color: var(--accent-green);
+}
+
+.stake-action {
+    margin-top: 16px;
+    display: flex;
+    gap: 8px;
+}
+
+.input-group {
+    flex: 1;
+    position: relative;
+    display: flex;
+}
+
+.input-group input {
+    width: 100%;
+    padding-right: 54px;
+    background: #1A1510;
+    border-color: #2A2218;
+}
+
+.btn-max {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 3px 7px;
+    background: rgba(212, 168, 67, 0.1);
+    color: var(--accent-gold);
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    transition: background 0.15s;
+}
+
+.btn-max:hover {
+    background: rgba(212, 168, 67, 0.2);
+}
+
+.btn-stake {
+    padding: 10px 24px;
+    background: var(--gradient-gold);
+    color: #0C0F0A;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: all 0.15s var(--ease-out);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-stake:hover:not(:disabled) {
+    box-shadow: var(--shadow-glow-gold);
+    filter: brightness(1.1);
+}
+
+.btn-stake:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.btn-stake:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-unstake {
+    padding: 10px 24px;
+    background: transparent;
+    color: var(--accent-red);
+    border: 1px solid rgba(193, 39, 45, 0.25);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.15s var(--ease-out);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-unstake:hover:not(:disabled) {
+    background: rgba(193, 39, 45, 0.08);
+    border-color: rgba(193, 39, 45, 0.4);
+}
+
+.btn-unstake:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.btn-unstake:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

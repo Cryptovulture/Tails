@@ -1,0 +1,22 @@
+.spinner-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.spinner {
+    border: 2px solid rgba(212, 168, 67, 0.15);
+    border-top-color: var(--accent-gold);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    display: inline-block;
+}
+
+.spinner-inner {
+    position: absolute;
+    border: 1.5px solid transparent;
+    border-top-color: var(--text-primary);
+    border-radius: 50%;
+    animation: spin 0.5s linear infinite reverse;
+}
