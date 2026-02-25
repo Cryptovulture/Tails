@@ -1,0 +1,109 @@
+/* 3D coin spin on Y axis */
+@keyframes spin-coin {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+/* Gentle float bob */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+/* Subtle glow pulse */
+@keyframes pulse-glow {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+/* Shimmer sweep for pseudo-elements */
+@keyframes shimmer-sweep {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+}
+
+/* Coin flip result */
+@keyframes tails-result {
+    0% { transform: rotateY(0deg); }
+    80% { transform: rotateY(1800deg); }
+    90% { transform: rotateY(1850deg); }
+    100% { transform: rotateY(1800deg); }
+}
+
+/* Fade in and slide up */
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Bounce for coin stack selection */
+@keyframes stack-bounce {
+    0%, 100% { transform: scale(1.05) translateY(0); }
+    50% { transform: scale(1.05) translateY(-3px); }
+}
+
+/* Confetti particle burst */
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(150px) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Modal fade in */
+@keyframes modal-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Modal card slide up */
+@keyframes modal-slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Aurora - very subtle background drift */
+@keyframes aurora-drift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Particle orbit around hero coin */
+@keyframes particle-orbit {
+    0% { transform: rotate(0deg) translateX(var(--orbit-radius, 90px)) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(var(--orbit-radius, 90px)) rotate(-360deg); }
+}
+
+/* Status pulse - gentle border glow for open bets */
+@keyframes status-pulse {
+    0%, 100% { border-color: rgba(139, 92, 246, 0.15); }
+    50% { border-color: rgba(139, 92, 246, 0.35); }
+}
+
+/* Dot pulse */
+@keyframes dot-pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+/* Spinner */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}

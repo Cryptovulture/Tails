@@ -1,0 +1,51 @@
+.pf-modal {
+    max-width: 480px;
+    text-align: left;
+}
+
+.pf-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.pf-section {
+    background: var(--bg-card);
+    border-left: 2px solid var(--accent-purple);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    margin-bottom: 10px;
+}
+
+.pf-section h3 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.pf-section p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.pf-modal .modal-close-btn {
+    display: block;
+    width: 100%;
+    margin-top: 16px;
+    background: var(--accent-purple);
+    color: var(--text-white);
+    border: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: var(--radius-sm);
+    transition: background 0.15s;
+}
+
+.pf-modal .modal-close-btn:hover {
+    background: var(--accent-purple-dim);
+}

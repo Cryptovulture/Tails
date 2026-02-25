@@ -1,0 +1,25 @@
+{
+    "name": "tails-deploy-scripts",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "deploy": "tsx deploy.ts",
+        "configure": "tsx configure.ts",
+        "deploy:basket-token": "tsx deploy-basket-token.ts",
+        "deploy:expert-index": "tsx deploy-expert-index.ts",
+        "deploy:batch-router": "tsx deploy-batch-router.ts",
+        "set-router": "tsx set-router.ts",
+        "deploy:share-token": "tsx deploy-share-token.ts",
+        "create-indexes": "tsx create-indexes.ts"
+    },
+    "dependencies": {
+        "@btc-vision/bitcoin": "^7.0.0-rc.4",
+        "@btc-vision/transaction": "^1.8.0-rc.3",
+        "opnet": "^1.8.1-rc.2"
+    },
+    "devDependencies": {
+        "tsx": "^4.21.0",
+        "typescript": "^5.9.3"
+    }
+}

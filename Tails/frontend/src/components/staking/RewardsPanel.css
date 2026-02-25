@@ -1,0 +1,57 @@
+.rewards-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+}
+
+.reward-amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 16px;
+    background: rgba(240, 168, 32, 0.04);
+    border: 1px solid rgba(240, 168, 32, 0.1);
+    border-radius: var(--radius-md);
+}
+
+.reward-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.reward-value {
+    font-family: var(--font-mono);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+}
+
+.btn-claim {
+    width: 100%;
+    padding: 12px;
+    background: var(--accent-gold);
+    color: #000;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.15s var(--ease-out);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-claim:hover:not(:disabled) {
+    box-shadow: var(--shadow-glow-gold);
+}
+
+.btn-claim:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.btn-claim:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}

@@ -1,0 +1,23 @@
+.staking-page {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.pool-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.staking-panels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+@media (max-width: 768px) {
+    .staking-panels {
+        grid-template-columns: 1fr;
+    }
+}

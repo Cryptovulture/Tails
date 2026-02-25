@@ -1,0 +1,10 @@
+{
+  "motoToken": "0x0a6732489a31e6de07917a28ff7df311fc5f98f6e1664943ac1c3fe7893bdab5",
+  "basketToken": "0x0735c44134d2e85e07cd9f89abdbc5527d61d254ae170264558ad42ee2c4b793",
+  "flipToken": "0xbc38e543465df652002e4d8204d686865cc09d880569f37676df36d272aa9bee",
+  "tails": "0x24d15e679086b3a0575d0028f8a593a14fa74471309ca7159ec5060a5dacb703",
+  "flipStaking": "0xadbd5dc642fe0c391b19c9d8fc7779a9b542a2669963e76fc2c3d4efd7ad4bd3",
+  "deployer": "bcrt1p99dyflhae8kft3e8tqzpt56z0lwe2p63gzt2a98yafnmxupnhnxqzqf40k",
+  "batchRouter": "0x22e73cca79b489000fd78f55a27fc5d009a133ae0c46be303e4807a575adaaba",
+  "expertIndex": "0x08bfdfca6311d96ef9ac45af2f9f22eaec296cf43cb58ae5b178599bdbe9432f"
+}
