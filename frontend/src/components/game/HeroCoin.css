@@ -55,8 +55,8 @@
 }
 
 @keyframes coin-spin {
-    from { transform: rotateY(0deg); }
-    to { transform: rotateY(360deg); }
+    from { transform: rotateX(12deg) rotateY(0deg); }
+    to { transform: rotateX(12deg) rotateY(360deg); }
 }
 
 /* ===== Edge layers — fills the thickness so you never see through ===== */
