@@ -38,48 +38,52 @@
 
 /* ===== Perspective ===== */
 .hero-coin-perspective {
-    perspective: 1000px;
+    perspective: 800px;
+    perspective-origin: 50% 30%;
 }
 
-/* ===== Spinning chip ===== */
+/* ===== The chip — tilted view + Z rotation ===== */
 .hero-coin {
     width: 150px;
     height: 150px;
     position: relative;
     transform-style: preserve-3d;
-    animation: coin-spin 6s linear infinite;
+    animation: chip-table-spin 10s linear infinite;
 }
 
 .hero-coin-wrapper:hover .hero-coin {
     animation-play-state: paused;
 }
 
-@keyframes coin-spin {
-    from { transform: rotateX(12deg) rotateY(0deg); }
-    to { transform: rotateX(12deg) rotateY(360deg); }
+/* Spin on Z (like spinning on a table) with a constant tilt that shows the edge */
+@keyframes chip-table-spin {
+    0% {
+        transform: rotateX(55deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(55deg) rotateZ(360deg);
+    }
 }
 
-/* ===== Edge layers — fills the thickness so you never see through ===== */
+/* ===== Edge layers ===== */
 .coin-edge-layer {
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    backface-visibility: hidden;
     background: repeating-conic-gradient(
         from 0deg,
         #D4A843 0deg 4.5deg,
-        #8B6914 4.5deg 9deg
+        #6B5D4A 4.5deg 9deg
     );
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.35);
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Every other edge slice gets the alternate stripe offset */
 .coin-edge-layer:nth-child(even) {
     background: repeating-conic-gradient(
         from 4.5deg,
         #D4A843 0deg 4.5deg,
-        #8B6914 4.5deg 9deg
+        #6B5D4A 4.5deg 9deg
     );
 }
 
@@ -91,9 +95,7 @@
     border-radius: 50%;
     backface-visibility: hidden;
     overflow: hidden;
-
-    /* Concentric gold rim */
-    border: 6px solid #A68430;
+    border: 5px solid #A68430;
     box-shadow:
         inset 0 0 0 3px #D4A843,
         inset 0 0 0 5px #8B6914,
