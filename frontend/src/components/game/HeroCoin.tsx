@@ -1,9 +1,6 @@
 import './HeroCoin.css';
 
 export function HeroCoin() {
-    // 60 edge layers from -12px to +12px — no gaps
-    const edgeLayers = Array.from({ length: 60 }, (_, i) => i);
-
     return (
         <div className="hero-coin-wrapper">
             <div className="hero-coin-glow" />
@@ -11,19 +8,18 @@ export function HeroCoin() {
             <div className="hero-coin-float">
                 <div className="hero-coin-perspective">
                     <div className="hero-coin">
-                        {edgeLayers.map((i) => (
-                            <div
-                                key={i}
-                                className="coin-edge-layer"
-                                style={{ transform: `translateZ(${-12 + i * 0.4}px)` }}
-                            />
-                        ))}
-
                         <div className="coin-face coin-front">
-                            <img className="coin-logo" src="/moto-logo.jpg" alt="MOTO" />
+                            <div className="coin-rim" />
+                            <div className="coin-inlay">
+                                <img className="coin-logo" src="/moto-logo.jpg" alt="MOTO" />
+                            </div>
                         </div>
+                        <div className="coin-edge" />
                         <div className="coin-face coin-back">
-                            <img className="coin-logo" src="/tails.png" alt="TAILS" />
+                            <div className="coin-rim" />
+                            <div className="coin-inlay">
+                                <img className="coin-logo" src="/tails.png" alt="TAILS" />
+                            </div>
                         </div>
                     </div>
                 </div>
