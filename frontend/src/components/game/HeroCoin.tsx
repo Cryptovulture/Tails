@@ -1,8 +1,8 @@
 import './HeroCoin.css';
 
 export function HeroCoin() {
-    // Edge layers fill the gap so you can't see through
-    const edgeLayers = Array.from({ length: 40 }, (_, i) => i);
+    // 60 edge layers from -12px to +12px — no gaps
+    const edgeLayers = Array.from({ length: 60 }, (_, i) => i);
 
     return (
         <div className="hero-coin-wrapper">
@@ -11,21 +11,17 @@ export function HeroCoin() {
             <div className="hero-coin-float">
                 <div className="hero-coin-perspective">
                     <div className="hero-coin">
-                        {/* Solid edge fill — no gaps */}
                         {edgeLayers.map((i) => (
                             <div
                                 key={i}
                                 className="coin-edge-layer"
-                                style={{ transform: `translateZ(${-8 + i * 0.4}px)` }}
+                                style={{ transform: `translateZ(${-12 + i * 0.4}px)` }}
                             />
                         ))}
 
-                        {/* Front face */}
                         <div className="coin-face coin-front">
                             <img className="coin-logo" src="/moto-logo.jpg" alt="MOTO" />
                         </div>
-
-                        {/* Back face */}
                         <div className="coin-face coin-back">
                             <img className="coin-logo" src="/tails.png" alt="TAILS" />
                         </div>
