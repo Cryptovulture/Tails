@@ -4,17 +4,17 @@
     align-items: center;
     padding: 24px 0 12px;
     position: relative;
-    height: 210px;
+    height: 220px;
 }
 
-/* ===== Gold glow behind coin ===== */
+/* ===== Gold glow ===== */
 .hero-coin-glow {
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 210px;
+    height: 210px;
     border-radius: 50%;
     background: radial-gradient(circle,
-        rgba(212, 168, 67, 0.15) 0%,
+        rgba(212, 168, 67, 0.14) 0%,
         rgba(212, 168, 67, 0.05) 40%,
         transparent 65%);
     pointer-events: none;
@@ -23,10 +23,10 @@
 
 @keyframes glow-pulse {
     0%, 100% { transform: scale(1); opacity: 0.6; }
-    50% { transform: scale(1.1); opacity: 1; }
+    50% { transform: scale(1.12); opacity: 1; }
 }
 
-/* ===== Gentle float ===== */
+/* ===== Float ===== */
 .hero-coin-float {
     animation: coin-float 5s ease-in-out infinite;
 }
@@ -36,12 +36,12 @@
     50% { transform: translateY(-5px); }
 }
 
-/* ===== 3D perspective container ===== */
+/* ===== Perspective ===== */
 .hero-coin-perspective {
     perspective: 1000px;
 }
 
-/* ===== The spinning coin ===== */
+/* ===== Spinning chip ===== */
 .hero-coin {
     width: 150px;
     height: 150px;
@@ -59,7 +59,31 @@
     to { transform: rotateY(360deg); }
 }
 
-/* ===== Each face ===== */
+/* ===== Edge layers — fills the thickness so you never see through ===== */
+.coin-edge-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    backface-visibility: hidden;
+    background: repeating-conic-gradient(
+        from 0deg,
+        #D4A843 0deg 4.5deg,
+        #8B6914 4.5deg 9deg
+    );
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.35);
+}
+
+/* Every other edge slice gets the alternate stripe offset */
+.coin-edge-layer:nth-child(even) {
+    background: repeating-conic-gradient(
+        from 4.5deg,
+        #D4A843 0deg 4.5deg,
+        #8B6914 4.5deg 9deg
+    );
+}
+
+/* ===== Front & back faces ===== */
 .coin-face {
     position: absolute;
     width: 100%;
@@ -68,31 +92,26 @@
     backface-visibility: hidden;
     overflow: hidden;
 
-    /* Thick poker chip rim */
+    /* Concentric gold rim */
+    border: 6px solid #A68430;
     box-shadow:
-        /* Gold outer ring */
-        0 0 0 5px #A68430,
-        0 0 0 7px #D4A843,
-        0 0 0 9px #8B6914,
-        /* Striped edge effect */
-        0 0 0 11px rgba(212, 168, 67, 0.3),
-        /* Outer glow */
-        0 0 20px rgba(212, 168, 67, 0.12),
-        /* Depth shadow */
-        0 4px 12px rgba(0, 0, 0, 0.4);
+        inset 0 0 0 3px #D4A843,
+        inset 0 0 0 5px #8B6914,
+        inset 0 2px 4px rgba(255, 255, 255, 0.06),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .coin-front {
     background: #1A1510;
-    transform: translateZ(1px);
+    transform: translateZ(8px);
 }
 
 .coin-back {
     background: #1A1510;
-    transform: rotateY(180deg) translateZ(1px);
+    transform: rotateY(180deg) translateZ(8px);
 }
 
-/* ===== Logo fills the face ===== */
+/* ===== Logo ===== */
 .coin-logo {
     width: 100%;
     height: 100%;
@@ -101,7 +120,7 @@
     display: block;
 }
 
-/* ===== Orbiting particles ===== */
+/* ===== Particles ===== */
 .hero-particle {
     position: absolute;
     top: 50%;
@@ -118,7 +137,7 @@
 
 @keyframes particle-fade {
     0%, 100% { opacity: 0.15; }
-    50% { opacity: 0.6; }
+    50% { opacity: 0.55; }
 }
 
 .hero-particle:nth-child(odd) {
